@@ -1,0 +1,127 @@
+{
+  "hash": "33332ca2",
+  "configHash": "2e6f3127",
+  "lockfileHash": "84c8817e",
+  "browserHash": "f6643170",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "9e10405f",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "08052842",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "425d495d",
+      "needsInterop": true
+    },
+    "react-redux": {
+      "src": "../../node_modules/react-redux/dist/react-redux.mjs",
+      "file": "react-redux.js",
+      "fileHash": "8128e0e1",
+      "needsInterop": false
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "69d9031d",
+      "needsInterop": false
+    },
+    "@tanstack/react-query-devtools": {
+      "src": "../../node_modules/@tanstack/react-query-devtools/build/modern/index.js",
+      "file": "@tanstack_react-query-devtools.js",
+      "fileHash": "21c8ae6d",
+      "needsInterop": false
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "f3e9d415",
+      "needsInterop": false
+    },
+    "react-hot-toast": {
+      "src": "../../node_modules/react-hot-toast/dist/index.mjs",
+      "file": "react-hot-toast.js",
+      "fileHash": "49ad9161",
+      "needsInterop": false
+    },
+    "@reduxjs/toolkit": {
+      "src": "../../node_modules/@reduxjs/toolkit/dist/redux-toolkit.modern.mjs",
+      "file": "@reduxjs_toolkit.js",
+      "fileHash": "b7a80040",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "9bf94056",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "0ddc794a",
+      "needsInterop": false
+    },
+    "react-hook-form": {
+      "src": "../../node_modules/react-hook-form/dist/index.esm.mjs",
+      "file": "react-hook-form.js",
+      "fileHash": "3c280ffe",
+      "needsInterop": false
+    },
+    "date-fns": {
+      "src": "../../node_modules/date-fns/index.js",
+      "file": "date-fns.js",
+      "fileHash": "4a0281de",
+      "needsInterop": false
+    },
+    "react-dropzone": {
+      "src": "../../node_modules/react-dropzone/dist/es/index.js",
+      "file": "react-dropzone.js",
+      "fileHash": "a1694a7b",
+      "needsInterop": false
+    },
+    "mapbox-gl": {
+      "src": "../../node_modules/mapbox-gl/dist/mapbox-gl.js",
+      "file": "mapbox-gl.js",
+      "fileHash": "16344b7b",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "JZI2RDCT-CEUYIN67": {
+      "file": "JZI2RDCT-CEUYIN67.js"
+    },
+    "HH7B3BHX-TAKP7FVG": {
+      "file": "HH7B3BHX-TAKP7FVG.js"
+    },
+    "chunk-LWYTLBIL": {
+      "file": "chunk-LWYTLBIL.js"
+    },
+    "chunk-V2X5ZORR": {
+      "file": "chunk-V2X5ZORR.js"
+    },
+    "chunk-UTBLUKZ6": {
+      "file": "chunk-UTBLUKZ6.js"
+    },
+    "chunk-J3GJSMK3": {
+      "file": "chunk-J3GJSMK3.js"
+    },
+    "chunk-RO4QZ7QI": {
+      "file": "chunk-RO4QZ7QI.js"
+    },
+    "chunk-32E4H3EV": {
+      "file": "chunk-32E4H3EV.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}
