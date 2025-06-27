@@ -19,12 +19,7 @@ const Login: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormData>({
-    defaultValues: {
-      email: "mayank@example.com",
-      password: "Abhi1708967@",
-    },
-  });
+  } = useForm<LoginFormData>();
 
   const onSubmit = (data: LoginFormData) => {
     login.mutate(data);
