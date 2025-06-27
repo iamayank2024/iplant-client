@@ -48,9 +48,7 @@ const Comments: React.FC<CommentsProps> = ({ postId }) => {
         data: { text: data.text },
       });
       reset(); // Clear the form after successful submission
-    } catch (error) {
-      console.error("Error adding comment:", error);
-    }
+    } catch (error) {}
   };
 
   const handleDeleteComment = (commentId: string) => {

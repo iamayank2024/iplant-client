@@ -117,7 +117,6 @@ const AddPostModal: React.FC = () => {
       handleClose();
     } catch (error) {
       toast.error("Failed to create post");
-      console.error("Error creating post:", error);
     }
   };
 
