@@ -85,7 +85,7 @@ const Profile: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
     reset,
   } = useForm<ProfileFormData>({
     defaultValues: {

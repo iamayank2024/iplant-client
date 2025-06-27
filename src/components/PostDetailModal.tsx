@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 
 import { usePost } from "../hooks/usePosts";
 import { closePostDetailModal } from "../store/uiSlice";
-import PostCard from "./PostCard";
 import Comments from "./Comments";
 
 interface PostDetailModalProps {

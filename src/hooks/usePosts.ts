@@ -154,7 +154,7 @@ export function useAddComment() {
 
       return { previousComments, previousPost, previousPosts };
     },
-    onSuccess: (newComment, { postId }) => {
+    onSuccess: (_, { postId }) => {
       // Refetch comments to get server data
       queryClient.invalidateQueries({ queryKey: ["comments", postId] });
       queryClient.invalidateQueries({ queryKey: ["post", postId] });
@@ -164,7 +164,7 @@ export function useAddComment() {
 
       toast.success("Comment added!");
     },
-    onError: (error, { postId }, context) => {
+    onError: (_, { postId }, context) => {
       // Revert optimistic updates
       if (context?.previousComments) {
         queryClient.setQueryData(
@@ -236,7 +236,7 @@ export function useDeleteComment() {
 
       toast.success("Comment deleted");
     },
-    onError: (error, { postId }, context) => {
+    onError: (_, { postId }, context) => {
       // Revert optimistic updates
       if (context?.previousComments) {
         queryClient.setQueryData(
@@ -309,7 +309,7 @@ export function useLikePost() {
 
       return { previousPost, previousPosts };
     },
-    onError: (error, postId, context) => {
+    onError: (_, postId, context) => {
       // Revert optimistic updates if there's an error
       if (context?.previousPost) {
         queryClient.setQueryData(["post", postId], context.previousPost);
@@ -318,7 +318,7 @@ export function useLikePost() {
         queryClient.setQueryData(["posts"], context.previousPosts);
       }
     },
-    onSettled: (data, error, postId) => {
+    onSettled: (_, __, postId) => {
       // Refetch to ensure data consistency
       queryClient.invalidateQueries({ queryKey: ["post", postId] });
       queryClient.invalidateQueries({ queryKey: ["posts"] });
@@ -367,7 +367,7 @@ export function useUnlikePost() {
 
       return { previousPost, previousPosts };
     },
-    onError: (error, postId, context) => {
+    onError: (_, postId, context) => {
       // Revert optimistic updates if there's an error
       if (context?.previousPost) {
         queryClient.setQueryData(["post", postId], context.previousPost);
@@ -376,7 +376,7 @@ export function useUnlikePost() {
         queryClient.setQueryData(["posts"], context.previousPosts);
       }
     },
-    onSettled: (data, error, postId) => {
+    onSettled: (_, __, postId) => {
       // Refetch to ensure data consistency
       queryClient.invalidateQueries({ queryKey: ["post", postId] });
       queryClient.invalidateQueries({ queryKey: ["posts"] });
@@ -439,7 +439,7 @@ export function useSavePost() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts", "saved"] });
     },
-    onError: (error, postId, context) => {
+    onError: (_, postId, context) => {
       // Revert optimistic updates if there's an error
       if (context?.previousPost) {
         queryClient.setQueryData(["post", postId], context.previousPost);
@@ -448,7 +448,7 @@ export function useSavePost() {
         queryClient.setQueryData(["posts"], context.previousPosts);
       }
     },
-    onSettled: (data, error, postId) => {
+    onSettled: (_, __, postId) => {
       // Refetch to ensure data consistency
       queryClient.invalidateQueries({ queryKey: ["post", postId] });
       queryClient.invalidateQueries({ queryKey: ["posts"] });
@@ -497,7 +497,7 @@ export function useUnsavePost() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["posts", "saved"] });
     },
-    onError: (error, postId, context) => {
+    onError: (_, postId, context) => {
       // Revert optimistic updates if there's an error
       if (context?.previousPost) {
         queryClient.setQueryData(["post", postId], context.previousPost);
@@ -506,7 +506,7 @@ export function useUnsavePost() {
         queryClient.setQueryData(["posts"], context.previousPosts);
       }
     },
-    onSettled: (data, error, postId) => {
+    onSettled: (_, __, postId) => {
       // Refetch to ensure data consistency
       queryClient.invalidateQueries({ queryKey: ["post", postId] });
       queryClient.invalidateQueries({ queryKey: ["posts"] });

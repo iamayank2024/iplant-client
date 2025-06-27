@@ -1,8 +1,4 @@
-import {
-  Query,
-  QueryClient,
-  type QueryObserverResult,
-} from "@tanstack/react-query";
+import { Query, QueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
 // Create a client
@@ -38,7 +34,7 @@ queryClient.setDefaultOptions({
   queries: {
     throwOnError: (
       error: any,
-      query: Query<any, Error, unknown, readonly unknown[]>
+      _: Query<any, Error, unknown, readonly unknown[]>
     ) => {
       const message = error?.response?.data?.message || "An error occurred";
       toast.error(message);

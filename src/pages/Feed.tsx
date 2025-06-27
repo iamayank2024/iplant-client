@@ -18,9 +18,6 @@ const Feed = () => {
     (state: RootState) => state.ui
   );
 
-  const user = useSelector((state: RootState) => state.auth.user);
-
-  // Use react-intersection-observer to detect when user scrolls to bottom
   const { ref: loadMoreRef, inView } = useInView();
 
   // Setup infinite query
@@ -69,18 +66,6 @@ const Feed = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      {/* <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-heading font-bold text-text dark:text-white">
-          Plant Feed
-        </h1>
-        <button
-          onClick={handleAddPost}
-          className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
-        >
-          Add Plant
-        </button>
-      </div> */}
-
       {/* Filter Tabs */}
       <div className="flex overflow-x-auto pb-2 mb-6 gap-2">
         <button

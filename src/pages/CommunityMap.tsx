@@ -110,22 +110,17 @@ const CommunityMap: React.FC = () => {
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
   });
 
-  const [map, setMap] = useState<google.maps.Map | null>(null);
-
   const onLoad = useCallback(
     (map: google.maps.Map) => {
       if (userLocation) {
         map.setCenter(userLocation); // Set center to user location
         map.setZoom(12); // City-level zoom
       }
-      setMap(map);
     },
     [userLocation]
   );
 
-  const onUnmount = useCallback((map: any) => {
-    setMap(null as any);
-  }, []);
+  const onUnmount = useCallback((_: any) => {}, []);
 
   if (!isLoaded) {
     return (
