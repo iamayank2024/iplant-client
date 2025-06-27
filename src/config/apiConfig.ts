@@ -1,5 +1,5 @@
 // API configurations
-export const API_BASE_URL = "http://localhost:8000/api";
+export const API_BASE_URL = "https://iplant-backend-lyart.vercel.app/api";
 
 // Request timeout in milliseconds
 export const REQUEST_TIMEOUT = 30000;
