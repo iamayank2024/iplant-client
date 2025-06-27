@@ -19,6 +19,7 @@ import { type RootState } from "../store";
 import PostCard from "../components/PostCard.tsx";
 import { useMe, useUpdateMe, useUserProfile } from "../hooks/useUser";
 import { useUserPosts, useSavedPosts } from "../hooks/usePosts";
+import ProfilePictureModal from "../components/ProfilePictureModal";
 
 interface ProfileFormData {
   name: string;
@@ -57,6 +58,8 @@ const Profile: React.FC = () => {
   const { user: authUser } = useSelector((state: RootState) => state.auth);
   const [isEditing, setIsEditing] = useState(false);
   const [activeTab, setActiveTab] = useState<"posts" | "saved">("posts");
+  const [isProfilePictureModalOpen, setIsProfilePictureModalOpen] =
+    useState(false);
 
   // Fetch current user data with the /me endpoint if viewing own profile
   const isOwnProfile = !userId || userId === authUser?.id;
@@ -159,7 +162,10 @@ const Profile: React.FC = () => {
               </div>
             )}
             {isOwnProfile && (
-              <button className="absolute bottom-0 right-0 p-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors">
+              <button
+                onClick={() => setIsProfilePictureModalOpen(true)}
+                className="absolute bottom-0 right-0 p-2 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors"
+              >
                 <Camera size={16} />
               </button>
             )}
@@ -336,6 +342,12 @@ const Profile: React.FC = () => {
           </div>
         )}
       </div>
+
+      {/* Profile Picture Modal */}
+      <ProfilePictureModal
+        isOpen={isProfilePictureModalOpen}
+        onClose={() => setIsProfilePictureModalOpen(false)}
+      />
     </div>
   );
 };

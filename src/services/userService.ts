@@ -67,6 +67,7 @@ class UserService {
 
   // Update user profile
   async updateUserProfile(profileData: ProfileUpdateRequest): Promise<User> {
+    console.log(profileData);
     // If we have file uploads, use FormData
     if (profileData.avatar || profileData.coverImage) {
       const formData = new FormData();
@@ -78,11 +79,16 @@ class UserService {
         formData.append("location", profileData.location);
 
       // Append files
-      if (profileData.avatar) formData.append("avatar", profileData.avatar);
-      if (profileData.coverImage)
+      if (profileData.avatar) {
+        formData.append("avatar", profileData.avatar);
+        formData.append("type", "avatar");
+      }
+      if (profileData.coverImage) {
         formData.append("coverImage", profileData.coverImage);
+        formData.append("type", "coverImage");
+      }
 
-      return api.put("/users/me/profile", formData, {
+      return api.post("/upload/profile", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
